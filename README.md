@@ -4,7 +4,7 @@ Looking for information? here is it "written by Amarbold Sodnomdorj"
 
 Overview
 
-Microsft has announced that we can now create more dynamic data pipelines using Azure Data Facotry (ADF) v2 by passing parameters between below:
+Microsft has announced that we can now create more dynamic data pipelines using Azure Data Facotry (ADF) v2 by passing parameters between:
   Pipelines
   Activities
   Datasets
