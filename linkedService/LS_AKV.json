@@ -1,0 +1,10 @@
+{
+	"name": "LS_AKV",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://dadfkv.vault.azure.net/"
+		}
+	}
+}

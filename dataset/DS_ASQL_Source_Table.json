@@ -1,0 +1,18 @@
+{
+	"name": "DS_ASQL_Source_Table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_SourceDB",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@item().TableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

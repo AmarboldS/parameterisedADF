@@ -1,0 +1,18 @@
+{
+	"name": "LS_ASQL_SourceDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=dtestsqls.database.windows.net;Initial Catalog=HP;User ID=dtest",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AKV",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "SourceDBpass"
+			}
+		}
+	}
+}

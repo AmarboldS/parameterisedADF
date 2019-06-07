@@ -1,0 +1,25 @@
+{
+	"name": "LS_ASQL_Generic",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"SecretName": {
+				"type": "string"
+			}
+		},
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_AKV",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": {
+					"value": "@{linkedService().SecretName}",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

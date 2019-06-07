@@ -1,0 +1,13 @@
+{
+	"name": "LS_ADLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://dadfadls.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "f77e87f9-ae31-4f5b-a45e-fbdac0102e34",
+			"subscriptionId": "3d450ca0-cad9-4d0a-aaf8-6cdbf740f6db",
+			"resourceGroupName": "dadftest"
+		}
+	}
+}

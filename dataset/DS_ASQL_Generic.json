@@ -1,0 +1,32 @@
+{
+	"name": "DS_ASQL_Generic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ASQL_Generic",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"SecretName": {
+					"value": "@dataset().DSSecretName",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"DSSecretName": {
+				"type": "string"
+			},
+			"DSTableName": {
+				"type": "string"
+			}
+		},
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": {
+				"value": "@dataset().DSTableName",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
