@@ -54,7 +54,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "TruncaeTargetTable",
+									"activity": "TruncateTargetTable",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -112,7 +112,7 @@
 							]
 						},
 						{
-							"name": "TruncaeTargetTable",
+							"name": "TruncateTargetTable",
 							"type": "SqlServerStoredProcedure",
 							"dependsOn": [
 								{
