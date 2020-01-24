@@ -211,17 +211,6 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"userProperties": [
-					{
-						"name": "filename",
-						"value": "test"
-					}
-				]
 			}
 		],
 		"parameters": {
