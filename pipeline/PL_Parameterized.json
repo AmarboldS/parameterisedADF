@@ -5,6 +5,7 @@
 			{
 				"name": "LookupTables",
 				"type": "Lookup",
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -12,6 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
@@ -42,6 +44,7 @@
 						]
 					}
 				],
+				"userProperties": [],
 				"typeProperties": {
 					"items": {
 						"value": "@activity('LookupTables').output.value",
@@ -67,11 +70,12 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"source": {
 									"type": "DelimitedTextSource",
 									"storeSettings": {
-										"type": "AzureDataLakeStoreReadSetting",
+										"type": "AzureDataLakeStoreReadSettings",
 										"recursive": false,
 										"wildcardFileName": {
 											"value": "@{concat(item().TableName,'.tsv')}",
@@ -80,7 +84,7 @@
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
-										"type": "DelimitedTextReadSetting"
+										"type": "DelimitedTextReadSettings"
 									}
 								},
 								"sink": {
@@ -129,6 +133,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"storedProcedureName": "sys.sp_executesql",
 								"storedProcedureParameters": {
@@ -155,6 +160,7 @@
 						{
 							"name": "CopyTablesASQLtoADLS",
 							"type": "Copy",
+							"dependsOn": [],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -162,6 +168,7 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
+							"userProperties": [],
 							"typeProperties": {
 								"source": {
 									"type": "AzureSqlSource"
@@ -169,10 +176,10 @@
 								"sink": {
 									"type": "DelimitedTextSink",
 									"storeSettings": {
-										"type": "AzureDataLakeStoreWriteSetting"
+										"type": "AzureDataLakeStoreWriteSettings"
 									},
 									"formatSettings": {
-										"type": "DelimitedTextWriteSetting",
+										"type": "DelimitedTextWriteSettings",
 										"quoteAllText": true,
 										"fileExtension": ".txt"
 									}
@@ -204,6 +211,12 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": []
 			}
 		],
 		"parameters": {
@@ -215,7 +228,8 @@
 				"type": "string",
 				"defaultValue": "destinationconnstr"
 			}
-		}
+		},
+		"annotations": []
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
